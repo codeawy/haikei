@@ -1,34 +1,34 @@
-import { Stack, Box, Heading, Button, Text } from "@chakra-ui/react";
-import { ChevronRightIcon } from "@chakra-ui/icons";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  Heading,
+} from "@chakra-ui/react";
+import { ArrowDownIcon, ArrowUpIcon } from "@chakra-ui/icons";
+import BlobVariantsRadioCard from "./BlobVariantsRadioCard";
 
 const BlobVariants = () => {
   return (
-    <Stack w="100%" className="flex items-center justify-between">
-      <Box h="40px" w="100%">
-        <Heading as="h6" size="xs">
-          VARIANTS
-        </Heading>
-        <Button
-          variant="ghost"
-          mt={5}
-          width="100%"
-          height="64px"
-          bg="#282828"
-          _hover={{ bg: "#282828" }}
-          className="flex items-center !justify-between"
-        >
-          <Text className="flex flex-col items-start">
-            <Text fontSize="md" color="white" mb={1}>
-              3:2
-            </Text>
-            <Text fontSize="xs" className="text-grayText">
-              900 X 600
-            </Text>
-          </Text>
-          <ChevronRightIcon color={"#6b6b6b"} />
-        </Button>
-      </Box>
-    </Stack>
+    <Accordion allowToggle defaultIndex={[0]}>
+      <AccordionItem borderColor="#4747475f" py={2}>
+        {({ isExpanded }) => (
+          <>
+            <h2>
+              <AccordionButton className="flex items-center justify-between !px-0">
+                <Heading as="h6" size="xs" color="white">
+                  VARIANTS
+                </Heading>
+                {isExpanded ? <ArrowUpIcon fontSize="12px" /> : <ArrowDownIcon fontSize="12px" />}
+              </AccordionButton>
+            </h2>
+            <AccordionPanel px={0}>
+              <BlobVariantsRadioCard />
+            </AccordionPanel>
+          </>
+        )}
+      </AccordionItem>
+    </Accordion>
   );
 };
 

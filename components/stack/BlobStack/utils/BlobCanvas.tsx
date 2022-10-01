@@ -5,7 +5,7 @@ const BlobCanvas = () => {
   return (
     <Stack w="100%" className="flex items-center justify-between mb-7">
       <Box h="40px" w="100%">
-        <Heading as="h6" size="xs">
+        <Heading as="h6" size="xs" color="white">
           CANVAS
         </Heading>
         <Button
