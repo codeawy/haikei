@@ -32,6 +32,10 @@ a {
   gap: 30px;
 }
 
+.stack-boxes-wrapper {
+  max-height: calc(100% - 100px);
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 4px;

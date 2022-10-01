@@ -4,8 +4,8 @@ export default function Home() {
   return (
     <div className="app-wrapper">
       <AppSideStack />
-      <h1 className="p-5">HI NAGA!</h1>
-      <h1 className="p-5">HI NAGA!</h1>
+      <div className="m-5 bg-gray-600">HI NAGA!</div>
+      <div className="m-5">HI NAGA!</div>
     </div>
   );
 }
