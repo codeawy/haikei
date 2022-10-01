@@ -1,12 +1,11 @@
-import { useTheme } from "next-themes";
 import AppSideStack from "../components/AppSideStack";
 
 export default function Home() {
-  const { theme, setTheme } = useTheme();
   return (
-    <div>
+    <div className="app-wrapper">
       <AppSideStack />
-      {/* <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>toggle</button> */}
+      <h1 className="p-5">HI NAGA!</h1>
+      <h1 className="p-5">HI NAGA!</h1>
     </div>
   );
 }

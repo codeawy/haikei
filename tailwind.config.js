@@ -6,7 +6,7 @@ module.exports = {
     typography: theme => ({}),
     extend: {
       colors: {
-        textGray: "#4a5568",
+        textGray: "#303030",
       },
     },
     container: {
