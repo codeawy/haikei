@@ -4,8 +4,14 @@ import {
   HStack,
   Input,
   InputGroup,
-  InputLeftAddon,
   InputLeftElement,
+  Popover,
+  PopoverArrow,
+  PopoverBody,
+  PopoverCloseButton,
+  PopoverContent,
+  PopoverHeader,
+  PopoverTrigger,
   Stack,
 } from "@chakra-ui/react";
 import ColorBox from "components/ColorBox";
@@ -52,6 +58,7 @@ const BlobColors = () => {
 
         <Stack direction={"row"} spacing="10px">
           <ColorBox bg={"#24b9b9"} />
+
           <InputGroup bg="#303030" rounded="lg">
             <InputLeftElement bg="transparent" border="none">
               #
