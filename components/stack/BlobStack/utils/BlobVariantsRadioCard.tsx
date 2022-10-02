@@ -15,18 +15,15 @@ function RadioCard(props: any) {
         cursor="pointer"
         borderWidth="1px"
         borderRadius="md"
-        boxShadow="md"
+        // boxShadow="md"
         _checked={{
           bg: "#303030",
           color: "white",
-          borderColor: "none",
           transition: "all .3s ease-in-out",
         }}
-        _focus={
-          {
-            // boxShadow: "outline",
-          }
-        }
+        _focus={{
+          boxShadow: "outline",
+        }}
         px={5}
         py={2}
         className="flex flex-col items-center justify-center !border-none"
@@ -47,18 +44,18 @@ function RadioCard(props: any) {
 
 // Step 2: Use the `useRadioGroup` hook to control a group of custom radios.
 function BlobVariantsRadioCard() {
-  const options = ["react", "vue"];
+  const options = ["solid", "outline"];
 
   const { getRootProps, getRadioProps } = useRadioGroup({
-    name: "framework",
-    defaultValue: "react",
+    name: "style",
+    defaultValue: "solid",
     onChange: console.log,
   });
 
   const group = getRootProps();
 
   return (
-    <HStack {...group}>
+    <HStack {...group} mb={5}>
       <div className="bg-lightGray w-full flex items-center p-1 rounded-md">
         {options.map((value, idx) => {
           const radio = getRadioProps({ value });

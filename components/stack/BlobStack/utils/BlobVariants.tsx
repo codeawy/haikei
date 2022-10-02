@@ -7,6 +7,8 @@ import {
 } from "@chakra-ui/react";
 import { ArrowDownIcon, ArrowUpIcon } from "@chakra-ui/icons";
 import BlobVariantsRadioCard from "./BlobVariantsRadioCard";
+import BlobVariantsPositions from "./BlobVariantsPositions";
+import HeadingTxt from "components/Heading";
 
 const BlobVariants = () => {
   return (
@@ -23,7 +25,11 @@ const BlobVariants = () => {
               </AccordionButton>
             </h2>
             <AccordionPanel px={0}>
+              <HeadingTxt txt="Styles" />
               <BlobVariantsRadioCard />
+
+              <HeadingTxt txt="Positions" />
+              <BlobVariantsPositions />
             </AccordionPanel>
           </>
         )}
