@@ -18,7 +18,7 @@ const BlobColors = () => {
     <Stack
       w="100%"
       align="stretch"
-      className="flex items-center justify-between pb-5 mb-5 border-b-[1px] border-b-lightGray"
+      className="flex items-center justify-between pb-5 mb-5 border-b-[1px] border-b-lightGray pl-5"
     >
       <HeadingTxt txt="COLOR" color="white" others={{ marginBottom: 4 }} />
       <Stack direction="column" spacing="15px">

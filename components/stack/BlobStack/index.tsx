@@ -8,7 +8,7 @@ import BlobVariants from "./BlobVariants";
 const BlobStack = () => {
   return (
     <div className="h-screen flex flex-col justify-between relative">
-      <VStack spacing="30px" className="max-h-[95%] py-5 pl-5" align="stretch">
+      <VStack spacing="30px" className="max-h-[95%] py-5" align="stretch">
         <div className="max-h-[90%] overflow-y-scroll pr-5">
           <BlobCanvas />
           <BlobVariants />

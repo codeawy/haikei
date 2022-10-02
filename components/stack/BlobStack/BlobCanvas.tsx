@@ -6,7 +6,7 @@ const BlobCanvas = () => {
   return (
     <Stack
       w="100%"
-      className="flex items-center justify-between pb-20 mb-5 border-b-[1px] border-b-lightGray"
+      className="flex items-center justify-between pb-20 mb-5 border-b-[1px] border-b-lightGray pl-5"
     >
       <Box h="40px" w="100%">
         <HeadingTxt txt="CANVAS" color="white" others={{ marginBottom: 4 }} />

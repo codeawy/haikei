@@ -18,7 +18,11 @@ const BlobShapes = () => {
   const [showTooltip, setShowTooltip] = useState(false);
 
   return (
-    <Stack w="100%" align="stretch" className="flex items-center justify-between pb-5">
+    <Stack
+      w="100%"
+      align="stretch"
+      className="flex items-center justify-between pb-5 border-b-[1px] border-b-lightGray pl-5"
+    >
       <HeadingTxt txt="SHAPE" color="white" others={{ marginBottom: 4 }} />
       <HeadingTxt txt="Complexity" />
       <Box className="flex items-center justify-between">
