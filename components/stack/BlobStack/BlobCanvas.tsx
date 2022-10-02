@@ -1,16 +1,17 @@
-import { Stack, Box, Heading, Button, Text } from "@chakra-ui/react";
+import { Stack, Box, Button, Text } from "@chakra-ui/react";
+import HeadingTxt from "components/Heading";
 import RightArrowIcon from "components/svg/RightArrowIcon";
 
 const BlobCanvas = () => {
   return (
-    <Stack w="100%" className="flex items-center justify-between mb-7">
+    <Stack
+      w="100%"
+      className="flex items-center justify-between pb-20 mb-5 border-b-[1px] border-b-lightGray"
+    >
       <Box h="40px" w="100%">
-        <Heading as="h6" size="xs" color="white">
-          CANVAS
-        </Heading>
+        <HeadingTxt txt="CANVAS" color="white" others={{ marginBottom: 4 }} />
         <Button
           variant="ghost"
-          mt={5}
           width="100%"
           height="64px"
           bg="#282828"

@@ -5,7 +5,7 @@ const AppSideStack = () => {
   return (
     <VStack
       spacing="24px"
-      className="h-screen  max-w-[250px] border-r-[1px] border-r-textGray p-5 bg-darkGray"
+      className="h-screen max-w-[250px] border-r-[1px] border-r-textGray p-5 bg-darkGray"
     >
       <div className="stack-boxes-wrapper w-full overflow-y-scroll pr-4">
         {stackBoxes.map((box: object, idx: number) => (

@@ -1,17 +1,21 @@
 import { VStack, StackDivider } from "@chakra-ui/react";
-import BlobCanvas from "./utils/BlobCanvas";
-import BlobVariants from "./utils/BlobVariants";
+import BlobCanvas from "./BlobCanvas";
+import BlobShapes from "./BlobShapes";
+import BlobVariants from "./BlobVariants";
 
 const BlobStack = () => {
   return (
     <VStack
       spacing="30px"
-      className="h-screen p-5"
+      className="h-screen py-5 pl-5"
       divider={<StackDivider borderColor="#282828" />}
       align="stretch"
     >
-      <BlobCanvas />
-      <BlobVariants />
+      <div className="max-h-[90%] overflow-y-scroll pr-5">
+        <BlobCanvas />
+        <BlobVariants />
+        <BlobShapes />
+      </div>
     </VStack>
   );
 };

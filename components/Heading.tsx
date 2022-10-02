@@ -1,8 +1,15 @@
 import { Heading } from "@chakra-ui/react";
 
-const HeadingTxt = ({ txt }: { txt: string }) => {
+interface IProps {
+  txt: string;
+  color?: string;
+  size?: string;
+  others?: any;
+}
+
+const HeadingTxt: React.FC<IProps> = ({ txt, color = "grayText", size = "xs", others }) => {
   return (
-    <Heading as="h6" size="xs" color="grayText" mb={2}>
+    <Heading as="h6" size={size} color={color} mb={2} {...others}>
       {txt}
     </Heading>
   );

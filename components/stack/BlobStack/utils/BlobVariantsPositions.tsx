@@ -1,4 +1,4 @@
-import { Box, HStack, useRadioGroup, useRadio, Text, Tooltip } from "@chakra-ui/react";
+import { Box, HStack, useRadioGroup, useRadio, Tooltip } from "@chakra-ui/react";
 import CenterIcon from "components/svg/CenterIcon";
 import LeftBottomIcon from "components/svg/LeftBottomIcon";
 import RightBottomIcon from "components/svg/RightBottomIcon";
