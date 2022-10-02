@@ -25,7 +25,7 @@ const BlobColors = () => {
         <HeadingTxt txt="Background" />
         <Stack direction={"row"} spacing="10px">
           <ColorBox bg={"#24b9b9"} />
-          <InputGroup bg="#303030" rounded="md">
+          <InputGroup bg="#303030" rounded="lg">
             <InputLeftElement bg="transparent" border="none">
               #
             </InputLeftElement>
@@ -52,7 +52,7 @@ const BlobColors = () => {
 
         <Stack direction={"row"} spacing="10px">
           <ColorBox bg={"#24b9b9"} />
-          <InputGroup bg="#303030" rounded="md">
+          <InputGroup bg="#303030" rounded="lg">
             <InputLeftElement bg="transparent" border="none">
               #
             </InputLeftElement>
