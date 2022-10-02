@@ -1,5 +1,5 @@
 import { Stack, Box, Heading, Button, Text } from "@chakra-ui/react";
-import { ChevronRightIcon } from "@chakra-ui/icons";
+import RightArrowIcon from "components/svg/RightArrowIcon";
 
 const BlobCanvas = () => {
   return (
@@ -30,7 +30,7 @@ const BlobCanvas = () => {
               900 X 600
             </Text>
           </Text>
-          <ChevronRightIcon color={"#6b6b6b"} />
+          <RightArrowIcon />
         </Button>
       </Box>
     </Stack>

@@ -5,10 +5,11 @@ import {
   AccordionPanel,
   Heading,
 } from "@chakra-ui/react";
-import { ArrowDownIcon, ArrowUpIcon } from "@chakra-ui/icons";
 import BlobVariantsRadioCard from "./BlobVariantsRadioCard";
 import BlobVariantsPositions from "./BlobVariantsPositions";
 import HeadingTxt from "components/Heading";
+import UpArrowIcon from "components/svg/UpArrowIcon";
+import DownArrowIcon from "components/svg/DownArrowIcon";
 
 const BlobVariants = () => {
   return (
@@ -21,7 +22,7 @@ const BlobVariants = () => {
                 <Heading as="h6" size="xs" color="white">
                   VARIANTS
                 </Heading>
-                {isExpanded ? <ArrowUpIcon fontSize="12px" /> : <ArrowDownIcon fontSize="12px" />}
+                {isExpanded ? <UpArrowIcon /> : <DownArrowIcon />}
               </AccordionButton>
             </h2>
             <AccordionPanel px={0}>

@@ -1,11 +1,16 @@
 import { Box, HStack, useRadioGroup, useRadio, Text } from "@chakra-ui/react";
-import { Icon } from "@chakra-ui/icons";
+// import { Icon } from "@chakra-ui/icons";
+import SolidCircleIcon from "components/svg/SolidCircleIcon";
+import OutlineCircleIcon from "components/svg/OutlineCircleIcon";
 
 function RadioCard(props: any) {
+  const { idx } = props;
   const { getInputProps, getCheckboxProps } = useRadio(props);
 
   const input = getInputProps();
   const checkbox = getCheckboxProps();
+
+  const icons = [{ icon: <SolidCircleIcon /> }, { icon: <OutlineCircleIcon /> }];
 
   return (
     <Box as="label" width="100%">
@@ -28,12 +33,7 @@ function RadioCard(props: any) {
         py={2}
         className="flex flex-col items-center justify-center !border-none"
       >
-        <Icon viewBox="0 0 200 200" color="white" fontSize={25}>
-          <path
-            fill="currentColor"
-            d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"
-          />
-        </Icon>
+        {icons[idx].icon}
         <Text fontSize={15} mt={1} color="white">
           {props.idx === 0 ? "Outline" : "Solid"}
         </Text>
@@ -42,7 +42,6 @@ function RadioCard(props: any) {
   );
 }
 
-// Step 2: Use the `useRadioGroup` hook to control a group of custom radios.
 function BlobVariantsRadioCard() {
   const options = ["solid", "outline"];
 
