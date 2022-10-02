@@ -16,18 +16,20 @@ function RadioCard(props: any) {
         borderWidth="1px"
         borderRadius="md"
         boxShadow="md"
-        bg="#242424"
         _checked={{
           bg: "#303030",
           color: "white",
-          borderColor: "#303030",
+          borderColor: "none",
+          transition: "all .3s ease-in-out",
         }}
-        _focus={{
-          boxShadow: "outline",
-        }}
+        _focus={
+          {
+            // boxShadow: "outline",
+          }
+        }
         px={5}
         py={2}
-        className="flex flex-col items-center justify-center"
+        className="flex flex-col items-center justify-center !border-none"
       >
         <Icon viewBox="0 0 200 200" color="white" fontSize={25}>
           <path
@@ -57,14 +59,16 @@ function BlobVariantsRadioCard() {
 
   return (
     <HStack {...group}>
-      {options.map((value, idx) => {
-        const radio = getRadioProps({ value });
-        return (
-          <Box key={value} className="border-2 border-transparent w-full">
-            <RadioCard {...radio} idx={idx} />
-          </Box>
-        );
-      })}
+      <div className="bg-lightGray w-full flex items-center p-1 rounded-md">
+        {options.map((value, idx) => {
+          const radio = getRadioProps({ value });
+          return (
+            <Box key={value} className="border-2 border-transparent w-full">
+              <RadioCard {...radio} idx={idx} />
+            </Box>
+          );
+        })}
+      </div>
     </HStack>
   );
 }
