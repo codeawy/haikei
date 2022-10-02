@@ -2,7 +2,7 @@ import { Stack, Box, Button, Text } from "@chakra-ui/react";
 import HeadingTxt from "components/Heading";
 import RightArrowIcon from "components/svg/RightArrowIcon";
 
-const BlobCanvas = () => {
+const BlobCanvas = ({ canvasDrawerRef, onOpen }: { canvasDrawerRef: any; onOpen: any }) => {
   return (
     <Stack
       w="100%"
@@ -22,6 +22,8 @@ const BlobCanvas = () => {
             transform: "scale(0.98)",
             borderColor: "#282828",
           }}
+          ref={canvasDrawerRef}
+          onClick={onOpen}
         >
           <Text className="flex flex-col items-start">
             <Text fontSize="md" color="white" mb={1}>
