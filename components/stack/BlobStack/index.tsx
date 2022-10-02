@@ -6,7 +6,7 @@ const BlobStack = () => {
   return (
     <VStack
       spacing="30px"
-      className="h-screen m-5"
+      className="h-screen p-5"
       divider={<StackDivider borderColor="#282828" />}
       align="stretch"
     >

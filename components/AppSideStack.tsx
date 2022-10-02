@@ -1,16 +1,12 @@
-import { useTheme } from "next-themes";
-import { VStack, Box, Switch } from "@chakra-ui/react";
+import { VStack } from "@chakra-ui/react";
 import { stackBoxes } from "../utils/lists";
 
 const AppSideStack = () => {
-  const { theme, setTheme } = useTheme();
-
   return (
-    <VStack spacing="24px" className="h-screen  max-w-[250px] border-r-[1px] border-r-textGray m-5">
-      <Box w="100%" className="flex items-center justify-between pr-4">
-        <span>Dark Mode</span>
-        <Switch size="md" onChange={() => setTheme(theme === "dark" ? "light" : "dark")} />
-      </Box>
+    <VStack
+      spacing="24px"
+      className="h-screen  max-w-[250px] border-r-[1px] border-r-textGray p-5 bg-darkGray"
+    >
       <div className="stack-boxes-wrapper w-full overflow-y-scroll pr-4">
         {stackBoxes.map((box: object, idx: number) => (
           <div

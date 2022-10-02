@@ -50,6 +50,10 @@ const BlobVariants = () => {
             <AccordionPanel px={0}>
               <HeadingTxt txt="Complexity" />
               <BlobVariantsComplexity />
+              <HeadingTxt txt="Contrast" />
+              <BlobVariantsComplexity />
+              <HeadingTxt txt="Size" />
+              <BlobVariantsComplexity />
             </AccordionPanel>
           </>
         )}
