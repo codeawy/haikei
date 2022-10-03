@@ -118,10 +118,10 @@ const BlobCanvasDrawer: React.FC<IProps> = ({ isOpen, onClose, btnRef }) => {
         </DrawerBody>
 
         <DrawerFooter>
-          <Button variant="outline" mr={3} onClick={onClose} w={"full"}>
+          <Button mr={3} onClick={onClose} w={"full"} bg="teal.400" _hover={{ bg: "teal.400" }}>
             Cancel
           </Button>
-          <Button colorScheme="blue" w={"full"}>
+          <Button bg="purple.500" w={"full"} _hover={{ bg: "purple.500" }}>
             Save
           </Button>
         </DrawerFooter>
