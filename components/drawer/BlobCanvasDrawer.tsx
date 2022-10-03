@@ -4,11 +4,11 @@ import {
   DrawerBody,
   DrawerOverlay,
   DrawerContent,
-  DrawerFooter,
   Stack,
   Divider,
-  Text,
 } from "@chakra-ui/react";
+import { selectShapeDimensionsAction } from "app/features/shapeSlice";
+import { useAppDispatch } from "app/hooks";
 import DrawerHeading from "components/DrawerHeader";
 import HeadingTxt from "components/Heading";
 import InputWithElement from "components/InputWithElement";
@@ -23,8 +23,8 @@ interface IProps {
 }
 
 const BlobCanvasDrawer: React.FC<IProps> = ({ isOpen, onClose, btnRef }) => {
-  const [selectedHDimensions, setSelectedHDimensions] = useState(0);
-  const [selectedVDimensions, setSelectedVDimensions] = useState(0);
+  const dispatch = useAppDispatch();
+  const [selectedDimensions, setSelectedDimensions] = useState({ width: 900, height: 450 });
 
   return (
     <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={btnRef}>
@@ -54,7 +54,8 @@ const BlobCanvasDrawer: React.FC<IProps> = ({ isOpen, onClose, btnRef }) => {
                 width="100%"
                 height="36px"
                 boxShadow={
-                  idx === selectedHDimensions
+                  selectedDimensions.width === value.dimensionsObj.width &&
+                  selectedDimensions.height === value.dimensionsObj.height
                     ? "0 0 1px 2px #7443f0bf, 0 1px 1px rgba(0, 0, 0, .15)"
                     : "none"
                 }
@@ -67,6 +68,10 @@ const BlobCanvasDrawer: React.FC<IProps> = ({ isOpen, onClose, btnRef }) => {
                 }}
                 px="5"
                 rounded="none"
+                onClick={() => {
+                  setSelectedDimensions(value.dimensionsObj);
+                  dispatch(selectShapeDimensionsAction(value.dimensionsObj));
+                }}
               >
                 <span color="white">{value.aspectRatio}</span>
                 <span className="text-grayText">{value.dimensions}</span>
@@ -88,7 +93,8 @@ const BlobCanvasDrawer: React.FC<IProps> = ({ isOpen, onClose, btnRef }) => {
                 width="100%"
                 height="36px"
                 boxShadow={
-                  idx === selectedVDimensions
+                  selectedDimensions.width === value.dimensionsObj.width &&
+                  selectedDimensions.height === value.dimensionsObj.height
                     ? "0 0 1px 2px #7443f0bf, 0 1px 1px rgba(0, 0, 0, .15)"
                     : "none"
                 }
@@ -101,6 +107,10 @@ const BlobCanvasDrawer: React.FC<IProps> = ({ isOpen, onClose, btnRef }) => {
                 }}
                 px="5"
                 rounded="none"
+                onClick={() => {
+                  setSelectedDimensions(value.dimensionsObj);
+                  dispatch(selectShapeDimensionsAction(value.dimensionsObj));
+                }}
               >
                 <span color="white">{value.aspectRatio}</span>
                 <span className="text-grayText">{value.dimensions}</span>
@@ -108,15 +118,6 @@ const BlobCanvasDrawer: React.FC<IProps> = ({ isOpen, onClose, btnRef }) => {
             ))}
           </Stack>
         </DrawerBody>
-
-        <DrawerFooter>
-          <Button mr={3} onClick={onClose} w={"full"} bg="teal.400" _hover={{ bg: "teal.400" }}>
-            Cancel
-          </Button>
-          <Button bg="purple.500" w={"full"} _hover={{ bg: "purple.500" }}>
-            Save
-          </Button>
-        </DrawerFooter>
       </DrawerContent>
     </Drawer>
   );
