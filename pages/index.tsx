@@ -9,8 +9,8 @@ export default function Home() {
   return (
     <div className="app-wrapper">
       <AppSideStack />
-      <div className="p-5 flex flex-col items-center justify-center bg-blob">
-        <BlobShape width={"95%"} height={"95%"} />
+      <div className="p-5 flex flex-col items-center justify-center">
+        <BlobShape width={700} height={500} />
       </div>
       <StacksWrapper />
     </div>

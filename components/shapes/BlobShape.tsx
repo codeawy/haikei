@@ -1,13 +1,13 @@
 import BlobSVG from "components/svg/BlobSVG";
 
 interface IProps {
-  width: number | string;
-  height: number | string;
+  width: number;
+  height: number;
 }
 
 const BlobShape: React.FC<IProps> = ({ width, height }) => {
   return (
-    <div className={`w-[${width}] h-[${height}] flex items-center justify-center bg-red-500`}>
+    <div className={`w-[${width}px] h-[${height}px] flex items-center justify-center`}>
       <BlobSVG
         width={width}
         height={height}

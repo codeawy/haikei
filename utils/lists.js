@@ -2,30 +2,37 @@ export const stackBoxes = [
   {
     title: "Blob",
     img: "/blob-cover.png",
+    name: "blob",
   },
   {
     title: "Scene",
     img: "/blob-scene-cover.png",
+    name: "scene",
   },
   {
     title: "Blurry",
     img: "/blurry-gradient-cover.png",
+    name: "blurry",
   },
   {
     title: "Circle",
     img: "/circle-scatter-cover.png",
+    name: "circle",
   },
   {
     title: "Layered",
     img: "/layered-waves-cover.png",
+    name: "layered",
   },
   {
     title: "Stacked",
     img: "/stacked-waves-cover.png",
+    name: "stacked",
   },
   {
     title: "Wave",
     img: "/wave-cover.png",
+    name: "wave",
   },
 ];
 

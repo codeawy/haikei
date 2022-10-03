@@ -1,5 +1,4 @@
 import { Box, HStack, useRadioGroup, useRadio, Text } from "@chakra-ui/react";
-// import { Icon } from "@chakra-ui/icons";
 import SolidCircleIcon from "components/svg/SolidCircleIcon";
 import OutlineCircleIcon from "components/svg/OutlineCircleIcon";
 
