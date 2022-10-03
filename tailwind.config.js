@@ -9,6 +9,7 @@ module.exports = {
         darkGray: "#171717",
         lightGray: "#282828",
         grayText: "#6b6b6b",
+        blob: "#ff0066",
       },
     },
     container: {

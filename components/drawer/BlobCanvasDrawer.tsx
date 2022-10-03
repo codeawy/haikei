@@ -68,12 +68,8 @@ const BlobCanvasDrawer: React.FC<IProps> = ({ isOpen, onClose, btnRef }) => {
                 px="5"
                 rounded="none"
               >
-                <Text fontSize="md" color="white" mb={1}>
-                  {value.aspectRatio}
-                </Text>
-                <Text fontSize="xs" className="text-grayText">
-                  {value.dimensions}
-                </Text>
+                <span color="white">{value.aspectRatio}</span>
+                <span className="text-grayText">{value.dimensions}</span>
               </Button>
             ))}
           </Stack>
@@ -106,12 +102,8 @@ const BlobCanvasDrawer: React.FC<IProps> = ({ isOpen, onClose, btnRef }) => {
                 px="5"
                 rounded="none"
               >
-                <Text fontSize="md" color="white" mb={1}>
-                  {value.aspectRatio}
-                </Text>
-                <Text fontSize="xs" className="text-grayText">
-                  {value.dimensions}
-                </Text>
+                <span color="white">{value.aspectRatio}</span>
+                <span className="text-grayText">{value.dimensions}</span>
               </Button>
             ))}
           </Stack>

@@ -34,9 +34,7 @@ function RadioCard(props: any) {
         className="flex flex-col items-center justify-center !border-none"
       >
         {icons[idx].icon}
-        <Text fontSize={15} mt={1} color="white">
-          {props.idx === 0 ? "Outline" : "Solid"}
-        </Text>
+        <span color="white">{props.idx === 0 ? "Outline" : "Solid"}</span>
       </Box>
     </Box>
   );

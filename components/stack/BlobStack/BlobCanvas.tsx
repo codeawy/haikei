@@ -25,14 +25,10 @@ const BlobCanvas = ({ canvasDrawerRef, onOpen }: { canvasDrawerRef: any; onOpen:
           ref={canvasDrawerRef}
           onClick={onOpen}
         >
-          <Text className="flex flex-col items-start">
-            <Text fontSize="md" color="white" mb={1}>
-              3:2
-            </Text>
-            <Text fontSize="xs" className="text-grayText">
-              900 X 600
-            </Text>
-          </Text>
+          <span className="flex flex-col items-start">
+            <span color="white">3:2</span>
+            <span className="text-grayText">900 X 600</span>
+          </span>
           <RightArrowIcon />
         </Button>
       </Box>
