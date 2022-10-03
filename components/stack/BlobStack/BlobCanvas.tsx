@@ -1,8 +1,14 @@
 import { Stack, Box, Button, Text } from "@chakra-ui/react";
+import { selectShape } from "app/features/shapeSlice";
+import { useAppSelector } from "app/hooks";
 import HeadingTxt from "components/Heading";
 import RightArrowIcon from "components/svg/RightArrowIcon";
 
 const BlobCanvas = ({ canvasDrawerRef, onOpen }: { canvasDrawerRef: any; onOpen: any }) => {
+  const {
+    selectedShapeDimensions: { width, height },
+  } = useAppSelector(selectShape);
+
   return (
     <Stack
       w="100%"
@@ -27,7 +33,9 @@ const BlobCanvas = ({ canvasDrawerRef, onOpen }: { canvasDrawerRef: any; onOpen:
         >
           <span className="flex flex-col items-start">
             <span color="white">3:2</span>
-            <span className="text-grayText">900 X 600</span>
+            <span className="text-grayText">
+              {width} X {height}
+            </span>
           </span>
           <RightArrowIcon />
         </Button>

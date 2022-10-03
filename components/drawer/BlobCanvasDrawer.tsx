@@ -7,6 +7,7 @@ import {
   Stack,
   Divider,
 } from "@chakra-ui/react";
+import { toggleOpenDrawerAction } from "app/drawer/drawerSlice";
 import { selectShapeDimensionsAction } from "app/features/shapeSlice";
 import { useAppDispatch } from "app/hooks";
 import DrawerHeading from "components/DrawerHeader";
@@ -71,6 +72,7 @@ const BlobCanvasDrawer: React.FC<IProps> = ({ isOpen, onClose, btnRef }) => {
                 onClick={() => {
                   setSelectedDimensions(value.dimensionsObj);
                   dispatch(selectShapeDimensionsAction(value.dimensionsObj));
+                  dispatch(toggleOpenDrawerAction());
                 }}
               >
                 <span color="white">{value.aspectRatio}</span>
@@ -110,6 +112,7 @@ const BlobCanvasDrawer: React.FC<IProps> = ({ isOpen, onClose, btnRef }) => {
                 onClick={() => {
                   setSelectedDimensions(value.dimensionsObj);
                   dispatch(selectShapeDimensionsAction(value.dimensionsObj));
+                  dispatch(toggleOpenDrawerAction());
                 }}
               >
                 <span color="white">{value.aspectRatio}</span>

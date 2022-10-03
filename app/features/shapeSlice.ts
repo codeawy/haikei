@@ -1,9 +1,14 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../../app/store";
 
+interface IDimensions {
+  width: number;
+  height: number;
+}
+
 export type ShapeState = {
   selectedShape: string;
-  selectedShapeDimensions: object;
+  selectedShapeDimensions: IDimensions;
 };
 
 const initialState: ShapeState = {
@@ -18,7 +23,7 @@ export const shapeSlice = createSlice({
     selectShapeAction: (state, action: PayloadAction<string>) => {
       state.selectedShape = action.payload;
     },
-    selectShapeDimensionsAction: (state, action: PayloadAction<object>) => {
+    selectShapeDimensionsAction: (state, action: PayloadAction<IDimensions>) => {
       state.selectedShapeDimensions = action.payload;
     },
   },
