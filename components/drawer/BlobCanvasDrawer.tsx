@@ -6,8 +6,15 @@ import {
   DrawerContent,
   DrawerFooter,
   Input,
+  Stack,
+  InputGroup,
+  InputLeftElement,
+  InputRightElement,
+  Divider,
 } from "@chakra-ui/react";
 import DrawerHeading from "components/DrawerHeader";
+import HeadingTxt from "components/Heading";
+import InputWithElement from "components/InputWithElement";
 
 interface IProps {
   isOpen: boolean;
@@ -22,8 +29,15 @@ const BlobCanvasDrawer: React.FC<IProps> = ({ isOpen, onClose, btnRef }) => {
       <DrawerContent bg={"#171717"}>
         <DrawerHeading title="CANVAS" onClose={onClose} />
 
-        <DrawerBody>
-          <Input placeholder="Type here..." />
+        <DrawerBody p="0">
+          <Stack direction={"column"} spacing="10px" pl="5">
+            <HeadingTxt txt="DIMENSIONS" color="white" />
+            <Stack direction={"row"} spacing="10px">
+              <InputWithElement leftTxt="W" rightTxt="px" placeholder="Width" />
+              <InputWithElement leftTxt="W" rightTxt="px" placeholder="Height" />
+            </Stack>
+          </Stack>
+          <Divider orientation="horizontal" my={4} borderColor={"grayText"} />
         </DrawerBody>
 
         <DrawerFooter>
