@@ -1,9 +1,9 @@
 import BlobStack from "./BlobStack";
 
-const StacksWrapper = () => {
+const StacksWrapper = ({ canvasDrawerRef }: { canvasDrawerRef: any }) => {
   return (
     <div className="bg-darkGray">
-      <BlobStack />
+      <BlobStack canvasDrawerRef={canvasDrawerRef} />
     </div>
   );
 };

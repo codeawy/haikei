@@ -1,22 +1,25 @@
-import { Box, Button, Stack, useDisclosure, VStack } from "@chakra-ui/react";
-import BlobCanvasDrawer from "components/drawer/BlobCanvasDrawer";
+import { Button, Stack, VStack } from "@chakra-ui/react";
+import { toggleOpenDrawerAction } from "app/drawer/drawerSlice";
+import { useAppDispatch } from "app/hooks";
 import HeadingTxt from "components/Heading";
-import { useRef } from "react";
 import BlobCanvas from "./BlobCanvas";
 import BlobColors from "./BlobColors";
 import BlobShapes from "./BlobShapes";
 import BlobVariants from "./BlobVariants";
 
-const BlobStack = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const canvasDrawerRef = useRef();
+const BlobStack = ({ canvasDrawerRef }: { canvasDrawerRef: any }) => {
+  const dispatch = useAppDispatch();
+
+  const onOpenDrawer = () => {
+    dispatch(toggleOpenDrawerAction());
+  };
 
   return (
     <>
       <div className="h-screen flex flex-col justify-between relative">
         <VStack spacing="30px" className="max-h-[95%] py-5" align="stretch">
           <div className="max-h-[90%] overflow-y-scroll pr-5">
-            <BlobCanvas canvasDrawerRef={canvasDrawerRef} onOpen={onOpen} />
+            <BlobCanvas canvasDrawerRef={canvasDrawerRef} onOpen={onOpenDrawer} />
             <BlobVariants />
             <BlobColors />
             <BlobShapes />
@@ -35,9 +38,6 @@ const BlobStack = () => {
           </Stack>
         </div>
       </div>
-
-      {/* TODO Move the drawer below to separate component because it's repeated for each shape (blob, wave, ...etc) */}
-      <BlobCanvasDrawer isOpen={isOpen} onClose={onClose} btnRef={canvasDrawerRef} />
     </>
   );
 };

@@ -12,9 +12,11 @@ const BlobShape: React.FC<IProps> = ({ width, height }) => {
         width={width}
         height={height}
         background="#cfcfcf"
-        isFilled={false}
+        isFilled
         filedColor="#6600FF"
         stroke="#0b0005"
+        translateX={200}
+        translateY={200}
       />
     </div>
   );
