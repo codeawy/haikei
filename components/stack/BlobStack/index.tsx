@@ -36,6 +36,7 @@ const BlobStack = () => {
         </div>
       </div>
 
+      {/* TODO Move the drawer below to separate component because it's repeated for each shape (blob, wave, ...etc) */}
       <BlobCanvasDrawer isOpen={isOpen} onClose={onClose} btnRef={canvasDrawerRef} />
     </>
   );
