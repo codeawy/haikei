@@ -10,7 +10,7 @@ export default function Home() {
     <div className="app-wrapper">
       <AppSideStack />
       <div className="p-5 flex flex-col items-center justify-center">
-        <BlobShape />
+        <BlobShape width={700} height={500} />
       </div>
       <StacksWrapper />
     </div>

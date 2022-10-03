@@ -22,7 +22,8 @@ const BlobSVG: React.FC<IProps> = ({ width, height, background, isFilled, filedC
           WebkitTransition: "all 0.3s ease 0s",
           transition: "all 0.3s ease 0s",
         }}
-        transform="translate(460.325 193.389)"
+        // change x,y
+        transform="translate(460.325 203.389)"
       />
     </svg>
   );

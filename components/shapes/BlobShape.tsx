@@ -1,15 +1,20 @@
 import BlobSVG from "components/svg/BlobSVG";
 
-const BlobShape = () => {
+interface IProps {
+  width: number;
+  height: number;
+}
+
+const BlobShape: React.FC<IProps> = ({ width, height }) => {
   return (
-    <div className="bg-[#FF0066] w-[700px] h-[450px] flex items-center justify-center">
+    <div className={`w-[${width}px] h-[${height}px] flex items-center justify-center`}>
       <BlobSVG
-        width={700}
-        height={450}
-        background="tomato"
+        width={width}
+        height={height}
+        background="#cfcfcf"
         isFilled={false}
-        filedColor="green"
-        stroke="#FF0066"
+        filedColor="#6600FF"
+        stroke="#0b0005"
       />
     </div>
   );
