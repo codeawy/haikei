@@ -2,8 +2,8 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../../app/store";
 
 interface IDimensions {
-  width: number;
-  height: number;
+  width: number | string;
+  height: number | string;
 }
 
 export type ShapeState = {

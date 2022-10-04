@@ -1,3 +1,4 @@
+import { ChangeEvent, useState } from "react";
 import {
   Button,
   Drawer,
@@ -6,6 +7,7 @@ import {
   DrawerContent,
   Stack,
   Divider,
+  useToast,
 } from "@chakra-ui/react";
 import { toggleOpenDrawerAction } from "app/drawer/drawerSlice";
 import { selectShapeDimensionsAction } from "app/features/shapeSlice";
@@ -14,7 +16,6 @@ import DrawerHeading from "components/DrawerHeader";
 import HeadingTxt from "components/Heading";
 import InputWithElement from "components/InputWithElement";
 import Horizontal from "components/svg/Horizontal";
-import { useState } from "react";
 import { canvasHorizontalDimension, canvasVerticalDimension } from "utils/lists";
 
 interface IProps {
@@ -24,8 +25,29 @@ interface IProps {
 }
 
 const BlobCanvasDrawer: React.FC<IProps> = ({ isOpen, onClose, btnRef }) => {
+  const toast = useToast();
   const dispatch = useAppDispatch();
-  const [selectedDimensions, setSelectedDimensions] = useState({ width: 900, height: 450 });
+  const [selectedDimensions, setSelectedDimensions] = useState<{
+    width: number | string;
+    height: number | string;
+  }>({ width: "", height: "" });
+
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { value, name } = e.target;
+
+    if (isNaN(+value)) {
+      toast({
+        title: "Invalid number.",
+        description: "Please, Write a valid width / height number.",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+      return;
+    }
+    setSelectedDimensions({ ...selectedDimensions, [name]: value as unknown as number });
+    dispatch(selectShapeDimensionsAction(selectedDimensions));
+  };
 
   return (
     <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={btnRef}>
@@ -37,8 +59,24 @@ const BlobCanvasDrawer: React.FC<IProps> = ({ isOpen, onClose, btnRef }) => {
           <Stack direction={"column"} spacing="10px" px="5">
             <HeadingTxt txt="DIMENSIONS" color="white" />
             <Stack direction={"row"} spacing="10px">
-              <InputWithElement leftTxt="W" rightTxt="px" placeholder="Width" />
-              <InputWithElement leftTxt="W" rightTxt="px" placeholder="Height" />
+              <InputWithElement
+                leftTxt="W"
+                rightTxt="px"
+                placeholder="Width"
+                maxLength={4}
+                name="width"
+                value={selectedDimensions.width}
+                onChange={onChange}
+              />
+              <InputWithElement
+                leftTxt="W"
+                rightTxt="px"
+                placeholder="Height"
+                maxLength={4}
+                name="height"
+                value={selectedDimensions.height}
+                onChange={onChange}
+              />
             </Stack>
           </Stack>
           <Divider orientation="horizontal" my={4} borderColor={"grayText"} />
@@ -55,8 +93,8 @@ const BlobCanvasDrawer: React.FC<IProps> = ({ isOpen, onClose, btnRef }) => {
                 width="100%"
                 height="36px"
                 boxShadow={
-                  selectedDimensions.width === value.dimensionsObj.width &&
-                  selectedDimensions.height === value.dimensionsObj.height
+                  +selectedDimensions.width === value.dimensionsObj.width &&
+                  +selectedDimensions.height === value.dimensionsObj.height
                     ? "0 0 1px 2px #7443f0bf, 0 1px 1px rgba(0, 0, 0, .15)"
                     : "none"
                 }
