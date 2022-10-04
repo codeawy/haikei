@@ -1,6 +1,6 @@
 interface IProps {
-  width: number;
-  height: number;
+  width: number | string;
+  height: number | string;
   background: string;
   isFilled: boolean;
   filedColor: string;

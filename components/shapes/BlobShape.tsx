@@ -1,8 +1,8 @@
 import BlobSVG from "components/svg/BlobSVG";
 
 interface IProps {
-  width: number;
-  height: number;
+  width: number | string;
+  height: number | string;
 }
 
 const BlobShape: React.FC<IProps> = ({ width, height }) => {

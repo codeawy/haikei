@@ -5,10 +5,15 @@ import AppSideStack from "../components/AppSideStack";
 import StacksWrapper from "../components/stack";
 import { selectDrawer, toggleOpenDrawerAction } from "app/drawer/drawerSlice";
 import { useAppDispatch, useAppSelector } from "app/hooks";
+import { selectShape } from "app/features/shapeSlice";
 
 export default function Home() {
   const dispatch = useAppDispatch();
   const { openDimensionsDrawer } = useAppSelector(selectDrawer);
+  const {
+    selectedShapeDimensions: { width, height },
+  } = useAppSelector(selectShape);
+
   const canvasDrawerRef = useRef();
 
   const onCloseDrawer = () => {
@@ -19,7 +24,7 @@ export default function Home() {
     <div className="app-wrapper">
       <AppSideStack />
       <div className="p-5 flex flex-col items-center justify-center">
-        <BlobShape width={700} height={500} />
+        <BlobShape width={width} height={height} />
       </div>
       <StacksWrapper canvasDrawerRef={canvasDrawerRef} />
 
