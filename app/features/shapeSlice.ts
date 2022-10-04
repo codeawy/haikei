@@ -4,6 +4,7 @@ import type { RootState } from "../../app/store";
 interface IDimensions {
   width: number | string;
   height: number | string;
+  aspectRatio: string;
 }
 
 export type ShapeState = {
@@ -13,7 +14,7 @@ export type ShapeState = {
 
 const initialState: ShapeState = {
   selectedShape: "blob",
-  selectedShapeDimensions: { width: 700, height: 500 },
+  selectedShapeDimensions: { width: 900, height: 450, aspectRatio: "2:1" },
 };
 
 export const shapeSlice = createSlice({

@@ -38,51 +38,42 @@ export const stackBoxes = [
 
 export const canvasHorizontalDimension = [
   {
-    aspectRatio: "2:1",
     dimensions: "900 x 450",
-    dimensionsObj: { width: 900, height: 450 },
+    dimensionsObj: { width: 900, height: 450, aspectRatio: "2:1" },
   },
   {
-    aspectRatio: "16:9",
     dimensions: "900 x 540",
-    dimensionsObj: { width: 900, height: 540 },
+    dimensionsObj: { width: 900, height: 540, aspectRatio: "16:9" },
   },
   {
-    aspectRatio: "3:2",
     dimensions: "900 x 600",
-    dimensionsObj: { width: 900, height: 600 },
+    dimensionsObj: { width: 900, height: 600, aspectRatio: "3:2" },
   },
   {
-    aspectRatio: "4:3",
     dimensions: "900 x 675",
-    dimensionsObj: { width: 900, height: 675 },
+    dimensionsObj: { width: 900, height: 675, aspectRatio: "4:3" },
   },
   {
-    aspectRatio: "1:1",
     dimensions: "900 x 900",
-    dimensionsObj: { width: 900, height: 900 },
+    dimensionsObj: { width: 900, height: 900, aspectRatio: "1:1" },
   },
 ];
 
 export const canvasVerticalDimension = [
   {
-    aspectRatio: "3:4",
     dimensions: "675 x 900",
-    dimensionsObj: { width: 675, height: 900 },
+    dimensionsObj: { width: 675, height: 900, aspectRatio: "3:4" },
   },
   {
-    aspectRatio: "2:3",
     dimensions: "600 x 900",
-    dimensionsObj: { width: 600, height: 900 },
+    dimensionsObj: { width: 600, height: 900, aspectRatio: "2:3" },
   },
   {
-    aspectRatio: "9:16",
     dimensions: "540 x 960",
-    dimensionsObj: { width: 540, height: 960 },
+    dimensionsObj: { width: 540, height: 960, aspectRatio: "9:16" },
   },
   {
-    aspectRatio: "1:2",
     dimensions: "450 x 900",
-    dimensionsObj: { width: 450, height: 900 },
+    dimensionsObj: { width: 450, height: 900, aspectRatio: "1:2" },
   },
 ];

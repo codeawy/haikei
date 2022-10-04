@@ -30,7 +30,8 @@ const BlobCanvasDrawer: React.FC<IProps> = ({ isOpen, onClose, btnRef }) => {
   const [selectedDimensions, setSelectedDimensions] = useState<{
     width: number | string;
     height: number | string;
-  }>({ width: "", height: "" });
+    aspectRatio: string;
+  }>({ width: "900", height: "450", aspectRatio: "2:1" });
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value, name } = e.target;
@@ -86,9 +87,9 @@ const BlobCanvasDrawer: React.FC<IProps> = ({ isOpen, onClose, btnRef }) => {
               <Horizontal />
               <HeadingTxt txt="HORIZONTAL" others={{ fontSize: 12 }} />
             </Stack>
-            {canvasHorizontalDimension.map((value, idx) => (
+            {canvasHorizontalDimension.map(value => (
               <Button
-                key={value.aspectRatio}
+                key={value.dimensions}
                 variant="ghost"
                 width="100%"
                 height="36px"
@@ -108,12 +109,12 @@ const BlobCanvasDrawer: React.FC<IProps> = ({ isOpen, onClose, btnRef }) => {
                 px="5"
                 rounded="none"
                 onClick={() => {
-                  setSelectedDimensions(value.dimensionsObj);
+                  setSelectedDimensions({ ...value.dimensionsObj });
                   dispatch(selectShapeDimensionsAction(value.dimensionsObj));
                   dispatch(toggleOpenDrawerAction());
                 }}
               >
-                <span color="white">{value.aspectRatio}</span>
+                <span color="white">{value.dimensionsObj.aspectRatio}</span>
                 <span className="text-grayText">{value.dimensions}</span>
               </Button>
             ))}
@@ -126,9 +127,9 @@ const BlobCanvasDrawer: React.FC<IProps> = ({ isOpen, onClose, btnRef }) => {
               <Horizontal />
               <HeadingTxt txt="VERTICAL" others={{ fontSize: 12 }} />
             </Stack>
-            {canvasVerticalDimension.map((value, idx) => (
+            {canvasVerticalDimension.map(value => (
               <Button
-                key={value.aspectRatio}
+                key={value.dimensions}
                 variant="ghost"
                 width="100%"
                 height="36px"
@@ -153,7 +154,7 @@ const BlobCanvasDrawer: React.FC<IProps> = ({ isOpen, onClose, btnRef }) => {
                   dispatch(toggleOpenDrawerAction());
                 }}
               >
-                <span color="white">{value.aspectRatio}</span>
+                <span color="white">{value.dimensionsObj.aspectRatio}</span>
                 <span className="text-grayText">{value.dimensions}</span>
               </Button>
             ))}

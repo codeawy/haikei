@@ -6,7 +6,7 @@ import RightArrowIcon from "components/svg/RightArrowIcon";
 
 const BlobCanvas = ({ canvasDrawerRef, onOpen }: { canvasDrawerRef: any; onOpen: any }) => {
   const {
-    selectedShapeDimensions: { width, height },
+    selectedShapeDimensions: { width, height, aspectRatio },
   } = useAppSelector(selectShape);
 
   return (
@@ -32,7 +32,7 @@ const BlobCanvas = ({ canvasDrawerRef, onOpen }: { canvasDrawerRef: any; onOpen:
           onClick={onOpen}
         >
           <span className="flex flex-col items-start">
-            <span color="white">3:2</span>
+            <span color="white">{aspectRatio}</span>
             <span className="text-grayText">
               {width} X {height}
             </span>
