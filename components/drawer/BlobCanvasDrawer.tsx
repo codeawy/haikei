@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import {
   Button,
   Drawer,
@@ -47,12 +47,20 @@ const BlobCanvasDrawer: React.FC<IProps> = ({ isOpen, onClose, btnRef }) => {
       return;
     }
     setSelectedDimensions({ ...selectedDimensions, [name]: value as unknown as number });
-    dispatch(selectShapeDimensionsAction(selectedDimensions));
   };
+
+  useEffect(() => {
+    const dimensionsTimer = setTimeout(() => {
+      dispatch(selectShapeDimensionsAction(selectedDimensions));
+    }, 100);
+
+    // Clean up
+    () => clearTimeout(dimensionsTimer);
+  }, [dispatch, selectedDimensions]);
 
   return (
     <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={btnRef}>
-      <DrawerOverlay backdropFilter="blur(10px) hue-rotate(90deg)" />
+      {/* <DrawerOverlay backdropFilter="blur(10px) hue-rotate(90deg)" /> */}
       <DrawerContent bg={"#171717"}>
         <DrawerHeading title="CANVAS" onClose={onClose} />
 
@@ -111,7 +119,8 @@ const BlobCanvasDrawer: React.FC<IProps> = ({ isOpen, onClose, btnRef }) => {
                 onClick={() => {
                   setSelectedDimensions({ ...value.dimensionsObj });
                   dispatch(selectShapeDimensionsAction(value.dimensionsObj));
-                  dispatch(toggleOpenDrawerAction());
+                  // ** close the drawer after selecting
+                  // dispatch(toggleOpenDrawerAction());
                 }}
               >
                 <span color="white">{value.dimensionsObj.aspectRatio}</span>
@@ -151,7 +160,8 @@ const BlobCanvasDrawer: React.FC<IProps> = ({ isOpen, onClose, btnRef }) => {
                 onClick={() => {
                   setSelectedDimensions(value.dimensionsObj);
                   dispatch(selectShapeDimensionsAction(value.dimensionsObj));
-                  dispatch(toggleOpenDrawerAction());
+                  // ** close the drawer after selecting
+                  // dispatch(toggleOpenDrawerAction());
                 }}
               >
                 <span color="white">{value.dimensionsObj.aspectRatio}</span>

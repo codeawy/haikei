@@ -15,8 +15,8 @@ const BlobShape: React.FC<IProps> = ({ width, height }) => {
         isFilled
         filedColor="#6600FF"
         stroke="#0b0005"
-        translateX={200}
-        translateY={200}
+        translateX={+width / 2}
+        translateY={+height / 2}
       />
     </div>
   );

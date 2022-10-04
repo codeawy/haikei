@@ -76,4 +76,8 @@ export const canvasVerticalDimension = [
     dimensions: "450 x 900",
     dimensionsObj: { width: 450, height: 900, aspectRatio: "1:2" },
   },
+  {
+    dimensions: "200 x 200",
+    dimensionsObj: { width: 200, height: 200, aspectRatio: "1:1" },
+  },
 ];
