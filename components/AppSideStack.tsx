@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { VStack } from "@chakra-ui/react";
 import { selectShapeAction } from "app/features/shapeSlice";
 import { useAppDispatch } from "app/hooks";
@@ -24,7 +25,7 @@ const AppSideStack = () => {
             className="w-full rounded-lg overflow-hidden hover:scale-95 duration-300 cursor-pointer relative mb-5"
             onClick={() => dispatch(selectShapeAction(box.name))}
           >
-            <img src={box.img} width={"100%"} height={"100px"} />
+            <img src={box.img} width={"100%"} height={"100px"} alt="" />
             <span className="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] font-semibold text-lg">
               {box.title}
             </span>

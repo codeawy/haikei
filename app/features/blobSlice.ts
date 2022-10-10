@@ -18,8 +18,8 @@ export const blobSlice = createSlice({
     },
   },
 });
-export const { selectBlobVariant } = blobSlice.actions;
 
+export const { selectBlobVariant } = blobSlice.actions;
 export const selectBlob = ({ blob }: RootState) => blob;
 
 export default blobSlice.reducer;

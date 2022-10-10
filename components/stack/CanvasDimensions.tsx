@@ -4,7 +4,7 @@ import { useAppSelector } from "app/hooks";
 import HeadingTxt from "components/Heading";
 import RightArrowIcon from "components/svg/RightArrowIcon";
 
-const BlobCanvas = ({ canvasDrawerRef, onOpen }: { canvasDrawerRef: any; onOpen: any }) => {
+const CanvasDimensions = ({ canvasDrawerRef, onOpen }: { canvasDrawerRef: any; onOpen: any }) => {
   const {
     selectedShapeDimensions: { width, height, aspectRatio },
   } = useAppSelector(selectShape);
@@ -12,7 +12,7 @@ const BlobCanvas = ({ canvasDrawerRef, onOpen }: { canvasDrawerRef: any; onOpen:
   return (
     <Stack
       w="100%"
-      className="flex items-center justify-between pb-20 mb-5 border-b-[1px] border-b-lightGray pl-5"
+      className="flex items-center justify-between pb-20 border-b-[1px] border-b-lightGray px-5 mt-5"
     >
       <Box h="40px" w="100%">
         <HeadingTxt txt="CANVAS" color="white" others={{ marginBottom: 4 }} />
@@ -44,4 +44,4 @@ const BlobCanvas = ({ canvasDrawerRef, onOpen }: { canvasDrawerRef: any; onOpen:
   );
 };
 
-export default BlobCanvas;
+export default CanvasDimensions;

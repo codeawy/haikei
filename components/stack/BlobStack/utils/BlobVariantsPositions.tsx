@@ -65,8 +65,8 @@ function BlobVariantsPositions() {
   const group = getRootProps();
 
   return (
-    <HStack {...group} mb={5}>
-      <div className="bg-lightGray w-full flex items-center justify-between p-1 rounded-md">
+    <HStack {...group}>
+      <div className="bg-lightGray w-full flex items-center justify-between rounded-md">
         {options.map((value, idx) => {
           return (
             <Box key={value} className="border-2 border-transparent w-full">

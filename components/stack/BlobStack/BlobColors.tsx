@@ -26,10 +26,10 @@ const BlobColors = () => {
       align="stretch"
       className="flex items-center justify-between pb-5 mb-5 border-b-[1px] border-b-lightGray pl-5"
     >
-      <HeadingTxt txt="COLOR" color="white" others={{ marginBottom: 4 }} />
-      <Stack direction="column" spacing="15px">
-        <HeadingTxt txt="Background" />
-        <Stack direction={"row"} spacing="10px">
+      <HeadingTxt txt="COLOR" color="white" others={{ marginBottom: 2 }} />
+      <Stack direction="column">
+        <HeadingTxt txt="Background" others={{ marginBottom: 0 }} />
+        <Stack direction={"row"}>
           <ColorBox bg={"#24b9b9"} />
           <InputGroup bg="#303030" rounded="lg">
             <InputLeftElement bg="transparent" border="none">
@@ -56,7 +56,7 @@ const BlobColors = () => {
         </Stack>
         <HeadingTxt txt="Fill" />
 
-        <Stack direction={"row"} spacing="10px">
+        <Stack direction={"row"}>
           <ColorBox bg={"#24b9b9"} />
 
           <InputGroup bg="#303030" rounded="lg">

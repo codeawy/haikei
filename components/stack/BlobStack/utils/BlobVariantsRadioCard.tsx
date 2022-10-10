@@ -58,8 +58,8 @@ function BlobVariantsRadioCard() {
   const group = getRootProps();
 
   return (
-    <HStack {...group} mb={5}>
-      <div className="bg-lightGray w-full flex items-center p-1 rounded-md">
+    <HStack {...group}>
+      <div className="bg-lightGray w-full flex items-center rounded-md p-[2px] mb-2">
         {options.map((value, idx) => {
           const radio = getRadioProps({ value });
           return (
