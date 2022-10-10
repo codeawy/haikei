@@ -10,26 +10,32 @@ interface IDimensions {
 export type ShapeState = {
   selectedShape: string;
   selectedShapeDimensions: IDimensions;
+  isSolid: boolean;
 };
 
 const initialState: ShapeState = {
   selectedShape: "blob",
   selectedShapeDimensions: { width: 900, height: 450, aspectRatio: "2:1" },
+  isSolid: true,
 };
 
 export const shapeSlice = createSlice({
   name: "shape",
   initialState,
   reducers: {
-    selectShapeAction: (state, action: PayloadAction<string>) => {
-      state.selectedShape = action.payload;
+    selectShapeAction: (state, { payload }: PayloadAction<string>) => {
+      state.selectedShape = payload;
     },
-    selectShapeDimensionsAction: (state, action: PayloadAction<IDimensions>) => {
-      state.selectedShapeDimensions = action.payload;
+    selectShapeDimensionsAction: (state, { payload }: PayloadAction<IDimensions>) => {
+      state.selectedShapeDimensions = payload;
+    },
+    selectBlobVariant: (state, { payload }: PayloadAction<boolean>) => {
+      state.isSolid = payload;
     },
   },
 });
-export const { selectShapeAction, selectShapeDimensionsAction } = shapeSlice.actions;
+export const { selectShapeAction, selectShapeDimensionsAction, selectBlobVariant } =
+  shapeSlice.actions;
 
 export const selectShape = ({ shape }: RootState) => shape;
 

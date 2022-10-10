@@ -1,18 +1,25 @@
 import { Box, HStack, useRadioGroup, useRadio, Text } from "@chakra-ui/react";
 import SolidCircleIcon from "components/svg/SolidCircleIcon";
 import OutlineCircleIcon from "components/svg/OutlineCircleIcon";
+import { useAppDispatch } from "app/hooks";
+import { selectBlobVariant } from "app/features/shapeSlice";
 
 function RadioCard(props: any) {
-  const { idx } = props;
+  const { idx, value } = props;
   const { getInputProps, getCheckboxProps } = useRadio(props);
+  const dispatch = useAppDispatch();
 
   const input = getInputProps();
   const checkbox = getCheckboxProps();
 
   const icons = [{ icon: <SolidCircleIcon /> }, { icon: <OutlineCircleIcon /> }];
 
+  const selectVariantHandler = () => {
+    dispatch(selectBlobVariant(idx ? false : true));
+  };
+
   return (
-    <Box as="label" width="100%">
+    <Box as="label" width="100%" onClick={selectVariantHandler}>
       <input {...input} />
       <Box
         {...checkbox}
@@ -33,7 +40,7 @@ function RadioCard(props: any) {
         className="flex flex-col items-center justify-center !border-none"
       >
         {icons[idx].icon}
-        <span color="white">{props.idx === 0 ? "Outline" : "Solid"}</span>
+        <span color="white">{value === "outline" ? "Outline" : "Solid"}</span>
       </Box>
     </Box>
   );
@@ -56,8 +63,14 @@ function BlobVariantsRadioCard() {
         {options.map((value, idx) => {
           const radio = getRadioProps({ value });
           return (
-            <Box key={value} className="border-2 border-transparent w-full">
-              <RadioCard {...radio} idx={idx} />
+            <Box
+              key={value}
+              className="border-2 border-transparent w-full"
+              onClick={() => {
+                console.log(value);
+              }}
+            >
+              <RadioCard {...radio} idx={idx} value={value} />
             </Box>
           );
         })}
