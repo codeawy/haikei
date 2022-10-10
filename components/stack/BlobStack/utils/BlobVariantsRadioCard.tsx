@@ -2,7 +2,7 @@ import { Box, HStack, useRadioGroup, useRadio, Text } from "@chakra-ui/react";
 import SolidCircleIcon from "components/svg/SolidCircleIcon";
 import OutlineCircleIcon from "components/svg/OutlineCircleIcon";
 import { useAppDispatch } from "app/hooks";
-import { selectBlobVariant } from "app/features/shapeSlice";
+import { selectBlobVariant } from "app/features/blobSlice";
 
 function RadioCard(props: any) {
   const { idx, value } = props;

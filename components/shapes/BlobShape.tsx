@@ -1,4 +1,4 @@
-import { selectShape } from "app/features/shapeSlice";
+import { selectBlob } from "app/features/blobSlice";
 import { useAppSelector } from "app/hooks";
 import BlobSVG from "components/svg/BlobSVG";
 
@@ -8,7 +8,7 @@ interface IProps {
 }
 
 const BlobShape: React.FC<IProps> = ({ width, height }) => {
-  const { isSolid } = useAppSelector(selectShape);
+  const { isSolid } = useAppSelector(selectBlob);
 
   return (
     <div

@@ -36,3 +36,9 @@ export default function Home() {
     </div>
   );
 }
+
+/**
+ * Every single shape's dimensions will change automatically after select a dimensions
+ * right side bar (canvas) is sticky
+ * make a slice for each shape such as blobSlice, waveSlice, ...etc
+ */
